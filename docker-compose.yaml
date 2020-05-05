@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nginx-rp-gateway:
+    container_name: nginx-rp-gateway
+    hostname: nginx-rp-gateway
+    image: nginx:1.16.0
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf:/etc/nginx/conf.d/
+      - ./html:/var/www/demos.shawndsilva.com/html
+      - /etc/letsencrypt:/etc/letsencrypt
